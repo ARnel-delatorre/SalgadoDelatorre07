@@ -1,6 +1,6 @@
-  <?php
+<?php
 
-   if ((isset($_POST['login'])) {
+   if (isset($_POST['login'])) {
 
 $conn = mysqli_connect('fdb1033.awardspace.net','4425606_sms','LAlove100722','4425606_sms');
 
@@ -22,7 +22,8 @@ $conn = mysqli_connect('fdb1033.awardspace.net','4425606_sms','LAlove100722','44
            
 
         } else {
-   echo "<center><p style='color: orange;'>Invalid credentials</p></center>";
+   $msg="Invalid pasword or email";
+             header("location: login.php?msg=$msg");
     
 }}
 ?>

@@ -6,6 +6,7 @@ session_start();
 ?>
 
 
+ 
 
 <?php include('header.php') ?>
 
@@ -41,7 +42,7 @@ session_start();
 
                         <div class="col-md-6 col-md-offset-3 jumbotron">
 
-                            <form  method="post" >
+                            <form action="arnel.php"  method="post" >
 
                               <div class="form-group">
 
@@ -71,38 +72,21 @@ session_start();
 
             </div>
 
-            <?php
-
-   if (isset($_POST['login'])) {
-
-$conn = mysqli_connect('fdb1033.awardspace.net','4425606_sms','LAlove100722','4425606_sms');
-
-        $user = $_POST['user'];
-
-        $password = $_POST['password'];
-
-        $qry = mysqli_query($conn,"SELECT * FROM admin WHERE user='$user' AND password='$password'");
-
+          
+<center><?php
+        if(isset($_GET['msg'])){
+                
+               echo $_GET['msg']; 
+                
+                }
         
-
-       if($qry->num_rows==1){
-              
-    
-    echo'<script>alert("login successfully");window.location.href="admin/admindash.php";</script>';
-
-
-
-           
-
-        } else {
-   echo "<center><p style='color: orange;'>Invalid credentials</p></center>";
-    
-}}
-?>
-
+        
+        ?>
 
 
 <?php include('footer.php') ?>
+
+
 
 
 
